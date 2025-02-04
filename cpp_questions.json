@@ -1,0 +1,1430 @@
+[
+    [
+        "<p>Definujte funkci a celočíselnými parametry a a b, která vypíše součet všech celých čísel od a do b (včetně).&nbsp;</p><p>Voláním definované funkce vytvořte vlákno a zabezpečte, aby hlavní program počkal na dokončení výpočtu vlákna. Nezapomeňte na nastavení parametrů funkce.</p>",
+        []
+    ],
+    [
+        "<p></p><p>Definujte cyklus pro iterativní přechod proměnné container a vypište prvky, které kolekce obsahuje.</p><p></p><pre>   std::vector&lt;int&gt;<int> container;</int></pre><p>Upravte cyklus tak, aby prvky byly vypsány v opačném pořadí - od konce.</p><p>Zapište oba cykly.</p><p></p>",
+        []
+    ],
+    [
+        "<p>Následující funkce <b>to_year</b> má za úkol určit, jaký je rok podle počtu dní (days) od 1. ledna 1980. Někdo ji umístil na tisíce zařízení pro přehrávání hudby a ta prodal zákazníkům v roce 2006. Vysvětlete, proč všechna zařízení přestala fungovat 31.\n    prosince 2020. Funkci <b>to_year </b>opravte. Funkce <b>is_leap</b> určí, zda je rok přestupný a funguje správně – pro přestupný rok vrací hodnotu 1.</p>\n<pre>int to_year(int days) {<br>  int year = 1980;<br>  while (days &gt; 365) {<br>    if (is_leap(year)) {<br>      if (days &gt; 366) {<br>        days -= 366; year += 1;<br>      }<br>    } else {<br>        days -= 365; year += 1;<br>    }<br>  }<br>  return year;<br>}</pre>\n<p><br></p>",
+        []
+    ],
+    [
+        "<p>Napište funkci <b>fce</b>, která přebírá pole čísel pomocí reference na std::vector&lt;int&gt;. Funkce má za úkol seřadit pole v nerostoucím pořadí.<br></p>",
+        []
+    ],
+    [
+        "<p>Napište funkci <b>fce</b>, která přebírá pole čísel pomocí reference na std::vector&lt;int&gt;. Funkce má za úkol zkontrolovat, že se v poli nenacházejí duplikáty. Pokud se v poli bude vyskytovat nějaké číslo více než jednou, vyhoďte výjimku.<br></p>",
+        []
+    ],
+    [
+        "<p>Je takováto definice třídy v pořádku? Pokud ne, opravte ji.<br></p><pre><span style=\"font-size: 0.9375rem;\">class foo {<br></span>&nbsp; &nbsp; std::vector&lt;int&gt; p;<br>&nbsp; &nbsp; int sz;<br>public:<br>&nbsp; &nbsp; foo(int size) : sz(size), p(std::vector&lt;int&gt;(sz)) {}<br>&nbsp; &nbsp; foo(const foo&amp; rhs) = delete;<br>&nbsp; &nbsp; foo&amp; operator=(const foo&amp; rhs) = delete;<br>&nbsp; &nbsp; ~foo() { delete [] p; }<br>&nbsp; &nbsp; ...<br>};</pre><p><br></p>",
+        []
+    ],
+    [
+        "<p>Definujte funkci počítadlo, která vypíše, kolikrát jste ji zavolali. Počet volání funkce udržujte v globální proměnné, kterou deklarujete uvnitř funkce.</p>",
+        []
+    ],
+    [
+        "<p>Funkce <b>print_repeatedly(s, n)</b> má za úkol n-krát vypsat řetězec s.&nbsp;<span style=\"font-size: 0.9375rem;\">Obsahuje chybu. Jakou chybu a jak ji můžete opravit?</span></p><pre><span style=\"font-size: 0.9375rem;\">void print_repeatedly(const std::string&amp; s, unsigned int n) {<br></span>&nbsp; &nbsp; while (--n &gt;= 0) {<br>&nbsp; &nbsp; &nbsp; &nbsp; std::cout &lt;&lt; s;<br>&nbsp; &nbsp; }<br>}</pre><pre><span style=\"font-size: 0.9375rem;\">int main() {<br></span>&nbsp; &nbsp; print_repeatedly(\"hip! \", 2);<br>&nbsp; &nbsp; print_repeatedly(\"hura!\\n\", 1);<br>}</pre><p><br></p>",
+        []
+    ],
+    [
+        "<p>Definujte lambda funkci, která zachytí hodnotu proměnné counter (proměnnou deklarujte) a pokud je tato hodnota menší, než 10000, zvýší ji o jedničku.&nbsp;</p><p>Voláním definované funkce vytvořte vlákno a zabezpečte, aby hlavní program počkal na dokončení výpočtu vlákna.</p>",
+        []
+    ],
+    [
+        "<p>Jakou chybu má v sobě následující funkce? Opravte ji.</p><pre>&nbsp; &nbsp; &nbsp; &nbsp; const int&amp; absolutni_hodnota(const int&amp; hodnota) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (hodnota &gt;= 0) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return hodnota;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int negace = -hodnota;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return negace;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; }</pre><p><br></p>",
+        []
+    ],
+    [
+        "<p>Zapište šablonu funkce max(T x, T y), která vrátí větší ze svých argumentů.</p><p><br></p>",
+        []
+    ],
+    [
+        "<p>Zapište šablonu funkce print(T x), která vypíše svůj argument na standardní výstup.</p><p><br></p>",
+        []
+    ],
+    [
+        "<p>Napište deklaraci šablonové třídy <b>queue</b> (fronta) pro libovolný datový typ (parametr šablony). Třída <b>queue</b> bude poskytovat následující operace:</p><pre>front() – vrátí prvek, který je na řadě<br>push(element) – přidá do fronty další prvek<br>pop() – zahodí prvek v čele fronty<br>size() – vrátí velikost fronty (počet prvků ve frontě)<br>empty() – vrací true pokud je fronta prázdná, jinak false.</pre><p>Nezapomeňte na konstruktory a destruktory.</p><p><br></p>",
+        []
+    ],
+    [
+        "<p>Napište deklaraci šablonové třídy <b>stack</b> (zásobník) pro libovolný datový typ (parametr šablony). Třída <b>stack</b> bude poskytovat následující operace:</p><pre>top() – vrátí prvek, který je na vrcholu<br>push(element) – přidá do zásobníku další prvek<br>pop() – zahodí prvek na vrcholu zásobníku<br>size() – vrátí velikost zásobníku (počet prvků v zásobníku)<br>empty() – vrací true pokud je zásobník prázdný, jinak false.</pre><p>Nezapomeňte na konstruktory a destruktory.</p><p><br></p>",
+        []
+    ],
+    [
+        "<p>Napište deklaraci šablonové třídy <b>priority_queue</b> (priorotní fronta) pro libovolný datový typ (parametr šablony). Třída <b>priority_queue</b> bude poskytovat následující operace:</p><pre>front() – vrátí prvek, který je na řadě<br>push(element) – přidá do fronty další prvek za prvky s vyšší prioritou<br>pop() – zahodí prvek v čele fronty<br>size() – vrátí velikost fronty (počet prvků ve frontě)<br>empty() – vrací true pokud je fronta prázdná, jinak false.</pre><p>Pokud jsou třeba, nezapomeňte na konstruktory a destruktory. Pro porovnání priority dvou elementů využívá prioritní fronta binární operátor &lt;, který porovná dva elementy a vrátí hodnotu true pro prvek s nižší prioritou.&nbsp;</p><p><br></p>",
+        []
+    ],
+    [
+        "<p>Co vypíše následující program na standardní výstup?</p><pre>#include &lt;iostream&gt;<br>struct Zvire {<br>&nbsp; &nbsp; virtual void udelejZvuk() const { std::cout &lt;&lt; \"??\\n\"; }<br>};<br>struct Pes : Zvire {<br>&nbsp; &nbsp; virtual void udelejZvuk() const { std::cout &lt;&lt; \"Haf!\\n\"; }<br>};<br>struct Kocka : Zvire {<br>&nbsp; &nbsp; virtual void udelejZvuk() { std::cout &lt;&lt; \"Mnaaau\\n\"; }<br>};<br>void foo(Zvire&amp; z) {<br>&nbsp; &nbsp; z.udelejZvuk();<br>}<br>int main() {<br>&nbsp; &nbsp; Zvire z; z.udelejZvuk();<br>&nbsp; &nbsp; Pes p; p.udelejZvuk();<br>&nbsp; &nbsp; Kocka k; k.udelejZvuk();<br>&nbsp; &nbsp; foo(z);<br> &nbsp;  foo(p);<br>&nbsp; &nbsp; foo(k);<br>} </pre><p><br></p>",
+        []
+    ],
+    [
+        "<p>Upravte funkci <b>read_numbers</b> tak, aby poskytovala základní záruku.</p><pre>int* read_numbers(int n, std::istream&amp; in) {<br>&nbsp; &nbsp; int* numbers = new int[n];<br>&nbsp; &nbsp; int sum = 0;<br>&nbsp; &nbsp; for (int i = 0; i &lt; n; ++i) {<br>&nbsp; &nbsp; &nbsp; &nbsp; in &gt;&gt; numbers[i];<br>&nbsp; &nbsp; &nbsp; &nbsp; sum += numbers[i];<br>&nbsp; &nbsp; }</pre><pre>&nbsp; &nbsp; return numbers;<br>}</pre><p><br></p>",
+        []
+    ],
+    [
+        "<p>Algoritmus je postup, který má následující vlastnosti:<br></p>",
+        [
+            "<p>Je deterministický - v každém kroku víme, který krok následuje<br></p>",
+            "<p>Je hromadný - umí řešit všechny instance problému<br></p>",
+            "<p>Je konečný - vždy skončí</p>"
+        ]
+    ],
+    [
+        "<p>Jaký vztah mezi algoritmem a programem platí?<br></p>",
+        [
+            "<p>Každý algoritmus lze realizovat programem<br></p>"
+        ]
+    ],
+    [
+        "<p>Jaký je vztah mezi výpočetními problémy a algoritmy?<br></p>",
+        [
+            "<p>Pro každý výpočetní problém může existovat více algoritmů.</p>",
+            "<p>Pro některé výpočetní problémy neexistuje žádný algoritmus.</p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících stylů (paradigmat) se používají při řešení problémů?<br></p>",
+        [
+            "<p>strukturovaný<br></p>",
+            "<p>objektově-orientovaný<br></p>",
+            "<p dir=\"ltr\" style=\"text-align: left;\">imperativní</p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících stylů (paradigmat) jsou k dispozici v C++?<br></p>",
+        [
+            "<p>procedurální programování<br></p>",
+            "<p>objektově-orientovaný<br></p>",
+            "<p>metaprogramování<br></p>",
+            "<p dir=\"ltr\" style=\"text-align: left;\">imperativní</p>"
+        ]
+    ],
+    [
+        "<p>Jazyk C je podmnožinou jazyka C++?</p><p><br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Pokud v deklaraci třídy neuvedeme kopírující konstruktor, které z následujících tvrzení platí?<br></p>",
+        [
+            "<p>Vždy se vytvoří standardní kopírující konstruktor (vytvoří mělkou kopii).<br></p>"
+        ]
+    ],
+    [
+        "<p>Pokud vytvoříme třídu B pomocí veřejné dědičnosti z třídy A:</p><p>class B : public A {...}</p><p>pak můžeme:</p>",
+        [
+            "<p>pro objekty třídy B používat veřejné metody třídy A</p>",
+            "<p>při realizaci metod třídy B používat veřejné metody třídy A<br></p>"
+        ]
+    ],
+    [
+        "<p>Statické metody třídy mohou:</p>",
+        [
+            "<p>používat jen statické datové položky této třídy</p>",
+            "<p>používat jen statické metody této třídy<br></p>"
+        ]
+    ],
+    [
+        "<p>Při použití dědičnosti může proměnná typu ukazatel na základní třídu ukazovat i na potomky této třídy?<br></p>",
+        [
+            "<p>Ano, neboť všichni potomci mají i data ze základní třídy.<br></p>"
+        ]
+    ],
+    [
+        "<p>Statické metody třídy mohou využívat:<br></p>",
+        [
+            "<p>Pouze statické datové položky a statické metody<br></p>"
+        ]
+    ],
+    [
+        "<p>Pokud potřebujeme, aby se volání metody přizpůsobilo dynamicky typu objektu, nad kterým se provádí, musíme:</p>",
+        [
+            "<p>metodu označit jako virtuální klíčovým slovem virtual</p>"
+        ]
+    ],
+    [
+        "<p>Chráněná členská data a metody přístupné pouze pro potomky se označují klíčovým slovem:</p>",
+        [
+            "<p>protected</p>"
+        ]
+    ],
+    [
+        "<p>Co to je čistě abstraktní třída?</p>",
+        [
+            "<p>obsahuje pouze čistě virtuální metody<br></p>"
+        ]
+    ],
+    [
+        "<p>V zadání problému máte pracovat s objety typu \"Ucet\" a \"Sporici_Ucet\". Spořící účet se od běžného účtu liší tím, že má navíc údaje o datu vzniku spořícího účtu (typu Date) a procenta zvýšení úroku pro spoření (položka typu float). Problém lze řešit dědičností, tj.:</p>\n<pre><span style=\"font-size:\n12.0pt;font-family:&quot;Calibri&quot;,sans-serif;Times New Roman&quot;;Times New Roman&quot;;\" lang=\"EN-US\">class Sporici_Ucet : public Ucet {<br>   Date kdy;</span><span style=\"font-size:\n12.0pt;font-family:&quot;Calibri&quot;,sans-serif;Times New Roman&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>   float prozvy;</span><span style=\"font-size:\n12.0pt;font-family:&quot;Calibri&quot;,sans-serif;Times New Roman&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>};</span></pre>\n<p>Které z následujících konstruktorů třídy \"Sporici_Ucet\" jsou správně?</p>\n<p><br></p>",
+        [
+            "<p>Sporici_Ucet :: Sporici_Ucet( . . . , Date k, float p) : Ucet( . . . ), kdy(k), prozvy(p) {}<br></p>",
+            "<p>Sporici_Ucet :: Sporici_Ucet( . . . , Date k, float p) : kdy(k), prozvy(p), Ucet( . . . ) {}</p>",
+            "<p>Sporici_Ucet :: Sporici_Ucet( . . . , Date k, float p) : Ucet( . . . ) { prozvy = p; kdy = k; }</p>"
+        ]
+    ],
+    [
+        "<p>Viditelnost položek ve struktuře nebo třídě lze upřesnit klíčovými slovy:</p>",
+        [
+            "<p>private</p>",
+            "<p>public</p>",
+            "<p>protected</p>"
+        ]
+    ],
+    [
+        "<p>Může být destruktor virtuální metoda?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Může mít abstraktní třída instance?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Může být spřátelená funkce virtuální?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Statické datové položky třídy jsou součástí každé instance?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Čistě abstraktní třída nemusí mít žádná členská data, ani žádné metody?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Může být konstruktor virtuální metoda?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Čistě abstraktní třída nemusí mít žádná členská data, ani žádné metody?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Jako polymorfismus označujeme fakt, že stejné metody mohou znamenat různé věci u různých tříd.</p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Pokud chceme v definici virtuální metody zdůraznit, že se skutečně jedná o jinou realizaci metody, jaké klíčové slovo použijeme v hlavičce (pozor na velká a malá písmena)?<br></p>",
+        [
+            "override"
+        ]
+    ],
+    [
+        "<p>Doplňte následující deklaraci třídy D tak, aby byla čistě abstraktní:<br></p><pre>class D {<br>&nbsp;&nbsp; int x;<br>public:<br>&nbsp;&nbsp; virtual ~D() = ... ;<br>};</pre><p><br></p>",
+        [
+            "0",
+            "0",
+            "0"
+        ]
+    ],
+    [
+        "<p>Co je zapotřebí doplnit do následující deklarace metody print, aby se jednalo o čistě virtuální metodu?</p><p>virtual void print()&nbsp;&nbsp;</p><p><br></p>",
+        [
+            "= 0;",
+            "= 0",
+            "=0",
+            "=0;",
+            "=0 ;"
+        ]
+    ],
+    [
+        "<p>Napište klíčové slovo, kterým aktivujete dynamickou vazbu metody v deklaraci třídy (na velikosti písmen v odpovědi záleží):<br></p>",
+        [
+            "virtual"
+        ]
+    ],
+    [
+        "<p>Které klíčové slovo použijeme pro vyznačení statického objektu (tj. objektu, který existuje po celou dobu výpočtu)? (Pozor, záleží na velikosti písmen!) <br></p>",
+        [
+            "static"
+        ]
+    ],
+    [
+        "<p>Lze v C++ přetěžovat operátory jako členské metody?<br></p>",
+        [
+            "<p>Většinu lze přetěžovat i jako metodu, některé ale nikoliv.<br></p>"
+        ]
+    ],
+    [
+        "<p>Přetížíme-li operátor jako funkci, jak zajistíme přístup k datovým položkám třídy? <br></p>",
+        [
+            "<p>Pomocí metod typu get modifikované třídy.<br></p>",
+            "<p>Pomocí definice operátoru jako spřátelené funkce.<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažte třídu T a operátor přiřazení = s deklarací:</p><pre>T&amp; operator=(const T&amp; p){ . . . };</pre><p>Jak v těle definice operátoru = poznáme, že přiřazovaný objekt není totožný s tím, kterému jsme žádost o přiřazení adresovali?<br></p>",
+        [
+            "<p>Pomocí testu: <br></p><p>if (this == &amp;p) return *this;<br></p>"
+        ]
+    ],
+    [
+        "<p>Novou verzi operátoru &lt;&lt; pro výstup informací do datového proudu můžeme vytvořit jako:<br></p>",
+        [
+            "<p>Jako přátelský operátor.<br></p>",
+            "<p>Jako operátor, pokud jsou k dispozici metody typu get.<br></p>"
+        ]
+    ],
+    [
+        "<p>Napište klíčové slovo, kterým zavedeme přátelskou funkci zavedeme (na velikosti písmen v odpovědi záleží):<br></p>",
+        [
+            "friend"
+        ]
+    ],
+    [
+        "<p>Lze v C++ přidávat zcela nové operátory?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Lze operátor &lt;&lt; přetížit metodou?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Co vytiskne následující fragment kódu:</p><pre>int n = 7;<br>switch ( n ) {<br>  case 6: printf(\"X\"); break;<br>  case 7: printf(\"XX\"); <br>  case 8: printf(\"XXX\"); break;<br>  default: printf(\"XXXX\");<br>}</pre><br>",
+        [
+            "<p>XXXXX<br></p>"
+        ]
+    ],
+    [
+        "<p>Kolik parametrů může mít funkce main?</p>",
+        [
+            "<p>Může být bez parametrů</p>",
+            "<p>Může mít dva parametry - počet argumentů a obsah jednotlivých argumentů</p>"
+        ]
+    ],
+    [
+        "<p>Jaké možnosti máme pro změnu hodnot prostřednictvím funkce?</p>",
+        [
+            "<p>Použití ukazatelů jako parametrů</p>",
+            "<p>Návratová hodnota funkce</p>",
+            "<p>Použití parametrů typu reference (v C++)</p>"
+        ]
+    ],
+    [
+        "<p>Pořadí vyhodnocení parametrů funkce je:</p>",
+        [
+            "<p>Je dáno implementací, nikoliv jazykem</p>"
+        ]
+    ],
+    [
+        "<p>Implicitní způsob volání parametrů funkce je:</p>",
+        [
+            "<p>Volání hodnotou</p>"
+        ]
+    ],
+    [
+        "<p>Které z typů cyklů máme v C++ k dispozici?</p>",
+        [
+            "<p>Cyklus FOR</p>",
+            "<p>Cyklus WHILE</p>",
+            "<p>Cyklus DO - WHILE</p>"
+        ]
+    ],
+    [
+        "<p>Jaké jsou strukturované příkazy?</p>",
+        [
+            "<p>Podmíněný příkaz</p>",
+            "<p>Přepínač</p>",
+            "<p>Cyklus&nbsp;</p>"
+        ]
+    ],
+    [
+        "<p>Jak se vytvoří primitivní příkaz?</p>",
+        [
+            "<p>Zapíše se výraz a za něj středník.</p>"
+        ]
+    ],
+    [
+        "<p>Následující podmíněný výraz je správně (proměnná x je typu int):</p>\n<pre><span style=\"font-size: 0.9375rem;\">(x &gt; 50) ? 12 : \"chyba\"</span></pre>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Příkaz goto lze použít pouze v rámci funkce?</p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Přiřazení je v C/C++ příkaz?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p>\n<pre><span style=\"font-size: 0.9375rem;\">char str[20];</span></pre>\n<p>Je správně zapsána následující hlavička příkazu cyklu, kterým se projdou všechny znaky pole str?</p>\n<pre><span style=\"font-size: 0.9375rem;\">for (auto c: str) ... c ...</span></pre>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p>\n<pre><span style=\"font-size: 0.9375rem;\">string str;</span></pre>\n<p>Je správně zapsána následující hlavička příkazu cyklu, kterým se projdou všechny znaky řetězce str?</p>\n<pre><span style=\"font-size: 0.9375rem;\">for (auto c: str) ... c ...</span></pre>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Po indikaci chyby přes globální příznak platí:<br></p>",
+        [
+            "<p>Nelze zjistit, kde chyba vznikla.<br></p>",
+            "<p>Je nutno chybu hned indikovat.<br></p>",
+            "<p>Může nastat více chyb, ale indikovat lze jen poslední.<br></p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících konstruktů se používají pro zpracování chyb?</p>",
+        [
+            "<p>Výjimky</p>",
+            "<p>Návratové hodnoty</p>",
+            "<p>Globální příznaky</p>"
+        ]
+    ],
+    [
+        "<p>Standardní třída exception požaduje při použití definici metody, která slouží pro indikaci chybové situace. Jak se tato metoda jmenuje?<br></p>",
+        [
+            "what"
+        ]
+    ],
+    [
+        "<p>Zapište klíčové slovo, kterým je možné výjimku generovat?<br></p>",
+        [
+            "throw"
+        ]
+    ],
+    [
+        "<p>Jakým klíčovým slovem označujeme ovladače výjimek?<br></p>",
+        [
+            "catch"
+        ]
+    ],
+    [
+        "<p>Napište název základní třídy pro definici výjimek:<br></p>",
+        [
+            "exception",
+            "std::exception",
+            "std::exception;"
+        ]
+    ],
+    [
+        "<p>Výjimky jsou identifikovány:<br></p>",
+        [
+            "<p>Typem<br></p>"
+        ]
+    ],
+    [
+        "<p>Kterou knihovnu používáme pro vytváření vláken?</p>",
+        [
+            "<p>thread</p>"
+        ]
+    ],
+    [
+        "<p>V C++ lze chybové situace řešit pomocí výjimek?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Ovladač catch(...) lze použít kdekoliv mezi ovladači výjimek?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Při řešení chyb pomocí globálních příznaků není možné ignorovat chybu? (pravda = není možné)<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Lze ignorovat chybu zachycenou výjimkou?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Pokud alokujeme místo ve volné paměti pomocí funkce malloc, calloc, nebo realoc, kterou funkci je nutné zavolat, aby nám místo ve volné paměti nezůstalo nevyužitelné, poté co ho již nepotřebujeme?<br></p>",
+        [
+            "<p>free<br></p>"
+        ]
+    ],
+    [
+        "<p>K čemu slouží funkce malloc z knihovny stdlib.h?</p>",
+        [
+            "<p>Alokuje paměť</p>"
+        ]
+    ],
+    [
+        "<p>Co vrátí funkce getenv(\"HOME\") ze standardní knihovny stdlib.h?</p>",
+        [
+            "<p>Obsah monitorové proměnné HOME - cesta k domovskému adresáři.</p>",
+            "<p dir=\"ltr\" style=\"text-align: left;\">Hodnotu proměnné prostředí (environmental variable) HOME</p>"
+        ]
+    ],
+    [
+        "<p>Co vrací funkce rand z knihovny stdlib.h?<br></p>",
+        [
+            "<p>Pseudonáhodné celé číslo v rozsahu 0..RAND_MAX<br></p>"
+        ]
+    ],
+    [
+        "<p>Jakým způsobem lze regulérně ukončit program jako správně provedený a dokončený?<br></p>",
+        [
+            "<p>Příkazem return 0; ve funkci main.<br></p>",
+            "<p>Voláním funkce exit(0).<br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se jmenuje symbolická konstanta, která v knihovně limits.h definuje maximální celé číslo typu int?</p>",
+        [
+            "INT_MAX"
+        ]
+    ],
+    [
+        "<p>Doplňte do níže uvedeného kódu v místě označeném ... výraz, který tam musí být uveden, aby kód byl správně.</p><pre>double *Q;<br>Q = ... malloc(512*sizeof(double));</pre>",
+        [
+            "(double *)",
+            "(double*)"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p><p>\n\n</p><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">#include &lt;cerrno&gt; // errno</pre><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">#include &lt;string.h&gt; // strerror<br>#include &lt;stdio.h&gt; // prinf, FILE, fopen</pre><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">int main() {<br>   FILE *f = fopen(\"moje.data\",\"r\");\n</pre><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">   if (f == NULL) { printf(\"Chyba: %d\\n\", errno); }<br>   return 0;</pre><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">}<br><br></pre>\n\n<p>Co bude na standardním výstupu po jeho skončení, pokud soubor moje.data neexistuje (číslo této chyby je 2)?</p>",
+        [
+            "Chyba: 2"
+        ]
+    ],
+    [
+        "<p>Jaký je rozdíl mezi strukturou a třídou?</p>",
+        [
+            "<p>Ve třídě jsou položky implicitně privátní, ve struktuře veřejné.</p>"
+        ]
+    ],
+    [
+        "<p>Určete chyby v následujícím fragmentu kódu:</p>\n<pre><span style=\"font-size: 0.9375rem;\">class TCosi {<br>  int hodnota;<br>  int pocet;<br>public:<br>  TCosi(int h, int p) { hodnota = h; pocet = p; }<br>  int getHodnota(void) { return hodnota; };<br>  void setHodnota(int h) { hodnota = h; };<br>};</span></pre>\n<pre>TCosi x(7,2);<br>cout &lt;&lt; x.getHodnota() &lt;&lt; endl;<br><br></pre>",
+        [
+            "<p>Je to správně.<br></p>"
+        ]
+    ],
+    [
+        "<p>Určete všechny chyby v následujícím fragmentu kódu:</p>\n<pre>class TCosi {<br>  int hodnota = 1;<br>public:<br>  getHodnota(void);<br>};</pre>\n<pre>TCosi x;<br>x.hodnota = 7;<br>cout &lt;&lt; x.getHodnota() &lt;&lt; endl;<br><br></pre>\n<p><br></p>",
+        [
+            "<p>Položky nemohou mít implitiní hodnoty.<br></p>",
+            "<p>Přímý přístup k položkám private není povolen.<br></p>"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci destruktoru pro třídu TCosi (nezapomeňte deklaraci řádně ukončit).</p><p><br></p>",
+        [
+            "~TCosi();"
+        ]
+    ],
+    [
+        "<p>Zapište klíčové slovo, kterým v těle metod třídy označujeme ukazatel na objekt, se kterým metoda pracuje.<br></p>",
+        [
+            "this"
+        ]
+    ],
+    [
+        "<p>Určete výstup následujícího fragmentu kódu:</p><pre><br>class TCosi {<br>  int hodnota;<br>  int pocet;<br>public:<br>  TCosi(int h, int p) { hodnota = h; pocet = p; }<br>  int getHodnota(void) { return hodnota; };<br>  void setHodnota(int h) { hodnota = h; };<br>};</pre><pre>TCosi x(7,2);</pre><pre>std::cout &lt;&lt; x.getHodnota();<br>x.setHodnota(8);<br>std::cout &lt;&lt; x.getHodnota();<br><br></pre>",
+        [
+            "78",
+            "7 8"
+        ]
+    ],
+    [
+        "<p>Uvažte následující deklaraci třídy String:</p><pre>class String {<br>  int pocet;  // aktuální počet znaků v řetězci<br>  char *text; // ukazatel na C-kovský řetězec<br>public:<br>. . . <br>};</pre><p>Je nutno vytvářet explicitní destruktor pro tuto třídu?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Implicitní viditelnost položek ve struktuře (struct) je private?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Pro formátovaný vstup a výstup v C/C++ používáme funkce</p>",
+        [
+            "<p>printf</p>",
+            "<p>scanf</p>"
+        ]
+    ],
+    [
+        "<p>Zaškrtněte všechny správné možnosti vstupu a výstupu v C/C++.</p>",
+        [
+            "<p>Textový standardní vstup a výstup</p>",
+            "<p>Binární vstup a výstup</p>",
+            "<p>Textový vstup a výstup</p>"
+        ]
+    ],
+    [
+        "<p>Které funkce slouží pro práci s binárními soubory?</p>",
+        [
+            "<p>read</p>",
+            "<p>write</p>"
+        ]
+    ],
+    [
+        "<p>Které knihovny používáme pro vstup a výstup v C/C++</p>",
+        [
+            "<p>stdio.h</p>",
+            "<p>cstdio</p>",
+            "<p>iostream</p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících objektů tvoří standardní prostředí programu v C?</p>",
+        [
+            "<p>stdin</p>",
+            "<p>stdout</p>",
+            "<p>stderr</p>"
+        ]
+    ],
+    [
+        "<p>Pro umožnění práce s vnějšími soubory, které netvoří standardní prostředí musíme použít které z následujících funkcí</p>",
+        [
+            "<p>open</p>",
+            "<p>fopen</p>",
+            "<p>Konstruktory tříd iostream<br></p>",
+            "<p>close</p>",
+            "<p>fclose</p>"
+        ]
+    ],
+    [
+        "<p>Napište příkaz, který je třeba doplnit do níže uvedeného kódu, aby se vstupní soubor správně uzavřel a uvolnil všechny alokované prostředky.</p><p style=\"margin-top: 3.36pt; margin-bottom: 0pt; margin-left: 0in; text-indent: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;\"></p><pre><span style=\"vertical-align: baseline;\">ifstream</span><span style=\"vertical-align: baseline;\">ifile</span><span style=\"vertical-align: baseline;\">; <br></span><span style=\"vertical-align: baseline;\">ifile.open</span><span style=\"vertical-align: baseline;\">(</span>\"heslo.txt\"<span style=\"text-indent: 0in;\">);<br></span><span style=\"vertical-align: baseline;\">if</span><span style=\"vertical-align: baseline;\">(!ifile</span><span style=\"vertical-align: baseline;\">.is_open</span><span style=\"vertical-align: baseline;\">()) {&nbsp;</span><span style=\"vertical-align: baseline;\">cout</span><span style=\"vertical-align: baseline;\">&nbsp;&lt;&lt; \"</span><span style=\"vertical-align: baseline;\">soubor&nbsp;</span><span style=\"vertical-align: baseline;\">nelze&nbsp;</span><span style=\"vertical-align: baseline;\">otevrit</span><span style=\"vertical-align: baseline;\">\";&nbsp;</span><span style=\"text-indent: 0in;\">}&nbsp;<br></span><span style=\"text-indent: 0in; vertical-align: baseline;\">else</span><span style=\"text-indent: 0in; vertical-align: baseline;\">{&nbsp;</span><span style=\"text-indent: 0in; vertical-align: baseline;\"><span style=\"vertical-align: baseline;\">cout</span><span style=\"vertical-align: baseline;\">&nbsp;&lt;&lt; \"OK</span><span style=\"vertical-align: baseline;\">\";</span>&nbsp;}<br></span></pre><p></p><p style=\"margin-top: 3.36pt; margin-bottom: 0pt; margin-left: 0in; text-indent: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;\"><span style=\"text-indent: 0in; font-size: 14pt; font-family: Consolas; color: black; font-weight: bold; vertical-align: baseline;\"><br></span></p><p>\n\n\n\n\n\n\n\n\n\n\n\n</p>",
+        [
+            "ifile.close();",
+            "ifile.close()"
+        ]
+    ],
+    [
+        "<p>Je správně následující příkaz, pokud je x deklarována jako proměnná typu int?</p><pre>cin &lt;&lt; x;</pre>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Jsou následující fragmenty kódu ekvivalentní, za předpokladu deklarace int x;</p>\n<pre>printf(\"Hodnota: %d\\n\",x);</pre>\n<p><span style=\"color: rgb(33, 37, 41); font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 14px;\">cout &lt;&lt; \"Hodnota: \" &lt;&lt; x &lt;&lt; endl;</span><br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Zápis:</p><pre>int f(int x, float y);</pre><p>je definice funkce f?</p><p><br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>V C může existovat více funkcí stejného jména?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>V C může existovat více funkcí stejného jména? Přesněji: mohou se v C přetěžovat funkce?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Může funkce main volat funkci main?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Je následující definice funkce f správně?</p><pre>int f(int x = 2, float y);</pre><p><br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Tzv. inline funkce se překládají jako makra?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Předpokládejte následující deklaraci funkce fn. <br></p><pre>void fn (int n, int a = 0, char *ret = \"tisk”);\n<br></pre><p>Je správné následující volání?</p><pre></pre><pre>fn(11,\"ahoj\")<br></pre>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>\n\n</p><p>Najděte chyby v následujícím kódu:</p><pre style=\"language:cs;margin-top:6.0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\"></pre><pre style=\"language:cs;margin-top:6.0pt;margin-bottom:0pt;margin-left:0in;\ntext-indent:0in;text-align:left;direction:ltr;unicode-bidi:embed;word-break:normal;punctuation-wrap:hanging\">#include&lt;iostream&gt;<br>#include&lt;string&gt;<br><br>int main() {<br>   std::string str{ \"Hello!\" };<br>   for(auto c : str) { std::cout &lt;&lt; \"[\" &lt;&lt; c &lt;&lt; \"]\"; }<br>   std::cout &lt;&lt; '\\n';<br>}<br><br></pre>",
+        [
+            "<p>Je to správný kód<br></p>"
+        ]
+    ],
+    [
+        "<p>Co je chybně v následujícím fragmentu kódu:</p>\n<pre><span style=\"font-size: 0.9375rem;\">void f(int x) { sem: return x+11; }<br>void g(float x) { x += 11; goto sem; }</span></pre>",
+        [
+            "<p>Nelze skákat z funkce do funkce<br></p>"
+        ]
+    ],
+    [
+        "Určete chyby v následujícím programu:<br><br><pre>#include &lt;iostream&gt;<br>#include &lt;fstream&gt;<br><br>int main() {<br>  ofstream soubor(\"data.txt\");<br>  soubor &lt;&lt; \"Vstupní text\\n\";<br>  return 0;<br>}<br><br></pre><br>",
+        [
+            "<p>Chyba - soubor není uzavřen</p>"
+        ]
+    ],
+    [
+        "<p>Co způsobí následující fragment programu:</p><pre>ifstream inFile(\"inputFile.txt\");&nbsp;<br><pre>inFile.fopen(\"inputFile.txt\", ios::binary);&nbsp;<br>if (inFile.is_open()) {&nbsp;<br>&nbsp; &nbsp; inFile.fseekg(0, ios::end);</pre><pre>}</pre></pre>",
+        [
+            "<p>Pokud existuje soubor inputFile.txt nastaví ukazovátko pro čtení na jeho konec.</p>"
+        ]
+    ],
+    [
+        "<p>Kterým klíčovým slovem požádáme překladač o doplnění typu proměnné? (Pozor, záleží na velikosti písmen!)<br></p>",
+        [
+            "auto"
+        ]
+    ],
+    [
+        "<p>Kterým klíčovým slovem uvádíme definici makra?<br></p>",
+        [
+            "define",
+            "#define"
+        ]
+    ],
+    [
+        "<p>Které klíčové slovo můžeme použít místo klíčového slova typedef? (Pozor, záleží na velilkosti písmen!)<br></p>",
+        [
+            "using"
+        ]
+    ],
+    [
+        "<p>Kterým klíčovým slovem označujeme strukturu sjednocení?<br></p>",
+        [
+            "union"
+        ]
+    ],
+    [
+        "<p>Kterým klíčovým slovem zjistíme velikost datového typu?<br></p>",
+        [
+            "sizeof"
+        ]
+    ],
+    [
+        "<p>Zapište deklaraci operátoru &lt;&lt; pro výstup objektu typu T.</p>",
+        [
+            "friend ostream& operator<<(ostream&, const T&);",
+            "friend ostream& operator<< (ostream&, const T&);",
+            "friend ostream& operator <<(ostream&, const T&);",
+            "friend ostream& operator<<(ostream&, const T &);",
+            "friend ostream& operator<<(ostream &, const T&);",
+            "friend ostream & operator<<(ostream&, const T&);"
+        ]
+    ],
+    [
+        "<p>Direktivy zpracuje překladač, pokud to má nastaveno parametrem dir=\"yes\"?<br></p>",
+        [
+            "<p>Direktivy zpracuje preprocesor, překladač je již ve zdrojovém textu nenajde.<br></p>"
+        ]
+    ],
+    [
+        "<p>Direktiva #include &lt;soubor&gt; zajistí vložení souboru do zdrojového textu:<br></p>",
+        [
+            "<p>Místo řádku s direktivou.<br></p>"
+        ]
+    ],
+    [
+        "<p>Co provede následující direktiva (uvažte skutečnou sémantiku):</p>\n<pre><span style=\"font-size: 0.9375rem;\">#include &lt;hlavicka.h&gt;\n<p><br></p></span></pre>",
+        [
+            "<p>Preprocesor se pokusí nahradit řádek s direktivou obsahem hlavičkového souboru standardní knihovny hlavicka.h.&nbsp;<br></p>",
+            "<p dir=\"ltr\" style=\"text-align: left;\">Protože preprocesor takovou knihovnu nenajde, ohlásí chybu.<br></p>"
+        ]
+    ],
+    [
+        "<p>Co provede následující direktiva:</p>\n<pre><span style=\"font-size: 0.9375rem;\">#include \"hlavicka.h\"\n<p><br></p></span></pre>",
+        [
+            "<p>Preprocesor nahradí řádek s direktivou obsahem souboru hlavicka.h z aktuálního adresáře.<br></p>"
+        ]
+    ],
+    [
+        "<p>Jakou direktivu použijete pro definici makra? (Pozor, uveďte včetně znaku #, záleží na velikosti písmen!)</p>",
+        [
+            "#define"
+        ]
+    ],
+    [
+        "<p>Zapište direktivu, která slouží pro podmíněný překlad, pokud není definována symbolická konstanta DEBUG.</p><p><br></p>",
+        [
+            "#ifndef DEBUG"
+        ]
+    ],
+    [
+        "<p>Zapište direktivu, která slouží pro ukončení podmíněného překladu.</p><p><br></p>",
+        [
+            "#endif"
+        ]
+    ],
+    [
+        "<p>Zapište direktivu, která nadefinuje symbolickou konstantu MAX s hodnotou 100.<br></p><p><br></p>",
+        [
+            "#define MAX 100"
+        ]
+    ],
+    [
+        "Direktivu #pragma musí preprocesor ve všech prostředích zpracovat podle definice?<br>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Jak se vytvářejí dynamické objekty?</p>",
+        [
+            "<p>Pomocí operátoru new</p>"
+        ]
+    ],
+    [
+        "<p>Kde se vytvářejí dynamické proměnné?</p>",
+        [
+            "<p>Na haldě ve volné paměti</p>"
+        ]
+    ],
+    [
+        "<p>Dynamické proměnné v C++ vytváříme pomocí:<br></p>",
+        [
+            "<p> Operátoru new</p>"
+        ]
+    ],
+    [
+        "<p>Pomocí operátoru delete lze rušit objekty:</p>",
+        [
+            "<p>vytvořené pomocí operátoru new</p>"
+        ]
+    ],
+    [
+        "<p>Inicializace podle seznamu inicializátorů se provádí:</p>",
+        [
+            "<p>podle pořadí položek v deklaraci&nbsp;</p>"
+        ]
+    ],
+    [
+        "<p>Jak se nazývají proměnné, které nejsou dynamické?</p>",
+        [
+            "statické",
+            "globální",
+            "automatické"
+        ]
+    ],
+    [
+        "<p><span style=\"font-size:12.0pt;line-height:\n115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;Times New Roman&quot;;\" lang=\"EN-US\">Obsahuje\nn</span><span style=\"font-size:12.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;Times New Roman&quot;;\">ásledující funkce chybu? <br></span></p><pre><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\">void square(int i, int *y) {</span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"></span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"></span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"></span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>  int pow;</span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"></span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>  pow = i * i;</span></b><b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>  y = &amp;pow;</span></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br>}</span></b></pre><p><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;Times New Roman&quot;;\" lang=\"EN-US\"><br></span></b></p>",
+        [
+            "<p>Není - vrací referenci na zrušený objekt.</p>"
+        ]
+    ],
+    [
+        "Uvažujte\nnásledující fragment programu. Co bude na standardním výstupu po jeho\nprovedení? <b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br></span></b><p></p><pre><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\">int i, &amp;ri = i;</span></b><b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br>int *pi = &amp;i;</span></b><b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br>i = 5; ri =10;</span></b><b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br>*pi = 15;</span></b><b style=\"\"></b><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br>std::cout &lt;&lt; i &lt;&lt; \" \" &lt;&lt; ri &lt;&lt; std::endl;</span></b></pre><p><b style=\"\"><span style=\"font-family:&quot;Courier New&quot;;\" lang=\"EN-US\"><br></span></b></p>",
+        [
+            "15 15"
+        ]
+    ],
+    [
+        "<p>Deklarovaná reference musí odkazovat na existující objekt?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Je přípustné následující volání funkce&nbsp;<span style=\"color: rgb(33, 37, 41); font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 13.125px;\">mul_by_2 ?</span><br></p>\n<pre>void mul_by_2(int&amp; a, int&amp; b, int&amp; c) {&nbsp;<br>   a *= 2;&nbsp;<br>   b *= 2;&nbsp;\n   c *= 2;&nbsp;\n}&nbsp;</pre>\n<pre>int main() {&nbsp;<br>   int x = 1, y = 3, z = 7;&nbsp;<br>   mul_by_2(2, y, z);&nbsp;<br>}</pre>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Je pravda následující tvrzení:</p>\n<pre><span style=\"font-size: 0.9375rem;\">*(&amp;x) == x\n<p><br></p></span></pre>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Jakou hodnotu bude mít symbol EX po následující deklaraci výčtového typu:</p><pre>enum BYTE { NULA, DVA = 2, CTYRI = NULA+DVA, SEST = DVA+CTYRI, EX };<br><br></pre>",
+        [
+            "<p>5</p>"
+        ]
+    ],
+    [
+        "<p>Jakou hodnotu bude mít symbol EX po následující deklaraci výčtového typu:</p><pre>enum BYTE {E1,E2=16,E3,E4=E3+5,EX];<br><br></pre>",
+        [
+            "<p>23</p>"
+        ]
+    ],
+    [
+        "<p>Jakou hodnotu bude mít symbol EX po následující deklaraci výčtového typu:</p><pre>enum BYTE {E1,E2=14,E3=E2+6,E4,EX];<br><br></pre>",
+        [
+            "<p>22</p>"
+        ]
+    ],
+    [
+        "<p>Definujte výčtový typ BYTE s položkami JEDNA, DVA, TRI, CTYRI, PET tak, aby hodnoty odpovídaly názvu položky (tj. např. položka PET měla hodnotu 5).</p>\n<p>Pozn.: Nepište do výsledku nadbytečné mezery a nadbytečná přiřazení (znak =).<br></p>",
+        [
+            "enum BYTE { JEDNA = 1, DVA, TRI, CTYRI, PET };",
+            "enum BYTE { JEDNA = 1, DVA, TRI, CTYRI, PET }",
+            "enum BYTE{JEDNA=1,DVA,TRI,CTYRI,PET};"
+        ]
+    ],
+    [
+        "<p>Definujte výčtový typ BYTE s položkami NULA, JEDNA, DVA, CTYRI, OSM tak, aby hodnoty odpovídaly názvu položky (tj. např. položka OSM měla hodnotu 8).</p>\n<p>Pozn.: Nepište do výsledku nadbytečné mezery a nadbytečná přiřazení (znak =).<br></p>",
+        [
+            "enum BYTE { NULA, JEDNA, DVA, CTYRI = 4, OSM = 8 };",
+            "enum BYTE { NULA, JEDNA, DVA, CTYRI = 4, OSM = 8 }",
+            "enum BYTE{NULA,JEDNA,DVA,CTYRI=4,OSM=8};"
+        ]
+    ],
+    [
+        "<p>Kolik parametrů má níže uvedená metoda tisk?</p><pre>class Datum {<br>  int rok; int mesic; int den;<br>public:<br>  void tisk(const char *poznamka);<br>};</pre><p><br></p>",
+        [
+            "<p>Má dva parametry, jeden implicitní (this) a jeden explicitní (poznamka).</p>"
+        ]
+    ],
+    [
+        "<p>Je správně a co znamená následující definice metody getObjem:</p><p>\n\n</p><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-align:left;direction:ltr;unicode-bidi:embed;\nword-break:normal;punctuation-wrap:hanging\">inline int Auto::getObjem() { return objem; }<br><br></pre>",
+        [
+            "<p>Je to správně, doporučení pro zvážení překladu jako makra.<br></p>"
+        ]
+    ],
+    [
+        "<p>Co vytiskne funkce tisk?</p>\n<pre>int g_count = 1;<br>int filtr(char *x) { cout &lt;&lt; x; return g_count++; };<br>void tisk(int prvni, int druhy) { cout &lt;&lt; prvni &lt;&lt; \" \" &lt;&lt; druhy &lt;&lt; endl; };<br><br>int main (void) {<br>&nbsp;&nbsp; &nbsp;tisk(filtr(\"alfa\"), filtr(\"beta\"));<br>&nbsp;&nbsp; &nbsp;system(\"pause\");<br>&nbsp;&nbsp; &nbsp;return 0;<br>}</pre>",
+        [
+            "<p>Nelze to určit, záleží na poředí vyhodnocení parametrů<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p><pre>int a[10];<br>int i = 3;<br>a[i] = i++;<br></pre><p>Jaká bude hodnota prvků a[3] a a[4]?<br></p>",
+        [
+            "<p>Výsledek nelze určit, závisí na implementaci (záleží na pořadí vyhodnocení ++ a = )<br></p>"
+        ]
+    ],
+    [
+        "<p>Co vytiskne následující fragment kódu:</p><pre>int x = 5;<br>printf(\"%d %d\\n\", x++, ++x);<br><br></pre>",
+        [
+            "<p>Výsledek nelze určit, závisí na implementaci (záleží na pořadí vyhodnocení parametrů)</p>"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p><pre>int x = 7;<br>x = x &lt;&lt; 3;<br></pre><p>Jaká bude hodnota proměnné x?<br></p>",
+        [
+            "<p>56<br></p>"
+        ]
+    ],
+    [
+        "<p>Číslo 174 lze v hexadekadické soustavě zapsat:</p><p><br></p>",
+        [
+            "<p>AE<br></p>",
+            "<p>ae<br></p>"
+        ]
+    ],
+    [
+        "<p>Zápis 0123 je:<br></p>",
+        [
+            "<p>Zápis celého čísla 83<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažte fragment kódu:</p><pre>int x = 1;<br>if ((x &gt; 2) &amp;&amp; (x = 0)) x = 2; <br></pre><p>Jaká bude hodnota proměnné x po vyhodnocení logického výrazu v podmínce?</p><p><br></p>",
+        [
+            "<p>1<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p><pre>int x = 3;<br>int y = 4;<br>if ((x = y) &amp;&amp; (x == y)) x = 15;<br></pre><p>Jaká bude hodnota proměnné x?</p><p><br></p>",
+        [
+            "<p>15<br></p>"
+        ]
+    ],
+    [
+        "<p>Zapšte dekadicky hodnotu hexadekadického čísla 1AE.</p><p><br></p>",
+        [
+            "430"
+        ]
+    ],
+    [
+        "<p>Pro převod čísel z dekadické soustavy do soustavy o základu Z lze použít algoritmus, kdy převáděné číslo dělíme základem a vždy zbytek po dělení zapíšeme jako výstupní číslici. Zbytek po dělení je totiž správná cifra v soustavě o základu Z.<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Je následující zápis správný příkaz?</p><pre>x = 7</pre><p><br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Mohou se v C++ vyskytovat dvě a více deklarací funkce F?<br></p>",
+        [
+            "<p>Ano, ale musí se lišit počtem, příp. typem argumentů.<br></p>"
+        ]
+    ],
+    [
+        "<p>V C++ lze zadávat implicitní hodnoty parametrů:<br></p>",
+        [
+            "<p>Vždy jen odzadu<br></p>"
+        ]
+    ],
+    [
+        "<p>Implicitní parametry funkcí musí splňovat jisté podmínky, označte, které to jsou:<br></p>",
+        [
+            "<p>Musí to být parametry na konci seznamu parametrů.<br></p>"
+        ]
+    ],
+    [
+        "<p>Funkce, které předznačíme jako inline, budou:<br></p>",
+        [
+            "<p>Překládány jako makro nebo skok do podprogramu, rozhodne to překladač<br></p>"
+        ]
+    ],
+    [
+        "<p>V jazyce C/C++ existují následující způsoby volání parametrů (zaškrtněnte správné možnosti):<br></p>",
+        [
+            "<p>hodnotou<br></p>",
+            "<p>referencí<br></p>"
+        ]
+    ],
+    [
+        "<p>Co je chybně v následujících deklaracích?</p><pre>typedef struct Polozka {<br>   int klic;<br>   char *hodnota;<br>} Polozka;<br><br>const Polozka TAB[5];<br><br></pre>",
+        [
+            "<p>Konstantní objekty musí mít přiřazenu počáteční hodnotu</p>"
+        ]
+    ],
+    [
+        "Najděte chyby v následující deklaraci struktury:\n<pre><span style=\"font-size: 0.9375rem;\">struct osoba {<br>&nbsp;&nbsp; static char *jmeno;<br>&nbsp;&nbsp; char *prijmeni;<br>&nbsp;&nbsp; extern int vek;<br>&nbsp;&nbsp; float plat;<br>}<br><br></span></pre>",
+        [
+            "<p>Klíčové slovo extern udávající paměťovou třídu se může použít jen na celou strukturu</p>"
+        ]
+    ],
+    [
+        "<p>Klíčové slovo static má následující důsledek:</p><p><br></p>",
+        [
+            "<p>Takto označený objekt existuje po celou dobu výpočtu<br></p>",
+            "<p dir=\"ltr\" style=\"text-align: left;\">Hodnotu takto označeného objektu lze změnit</p>"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu.Která níže uvedená tvrzení jsou pravdivá?<br></p><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-align:left;direction:ltr;unicode-bidi:embed;\nword-break:normal;punctuation-wrap:hanging\">int a = 0, b = 0, c = 1;  </pre><br><pre style=\"language:cs;margin-top:0pt;margin-bottom:0pt;margin-left:0in;\ntext-align:left;direction:ltr;unicode-bidi:embed;\nword-break:normal;punctuation-wrap:hanging\">void funkce(int a, int b) { <br>   int a = -5;\n   cout &lt;&lt; \"main: a = \" &lt;&lt; a &lt;&lt; \", b = \" &lt;&lt; b &lt;&lt; \", c = \" &lt;&lt; c &lt;&lt; endl;<br>}<br><br></pre>",
+        [
+            "<p>Chybná redeklarace proměnné a.<br></p>"
+        ]
+    ],
+    [
+        "<p>Proč je v následující třídě deklarována položka pocet jako statická?</p>\n<pre><span style=\"font-size: 0.9375rem;\">class Object {<br>  static int pocet;<br>  char *jmeno;<br>public:<br>  Object() { pocet++; };<br>};</span></pre>",
+        [
+            "<p>Položka počet je pro třídu Object jediná - je statická, ale je přístupná pouze ve třídě Object.<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažte následující fragment kódu:</p><pre>class Obj {<br>   int hodnota;<br>   static int pocet = 0;<br>public:<br>   Obj(int h) { hodnota = h; pocet++; }<br>   ~Obj() { --pocet; }<br>};<br><br>Obj x(42);<br></pre><p>Která z následujících tvrzení jsou správná:</p><p><br></p>",
+        [
+            "<p>Proměnná pocet je statická, proměnná x rovněž.<br></p>"
+        ]
+    ],
+    [
+        "<p>Je správně následující deklarace:</p><pre>static const float x = 10;</pre><p><br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Objekty typu union se inicializují podle první položky?<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Kolik destruktorů může mít třída?<br></p>",
+        [
+            "<p>Vždy právě jeden.<br></p>"
+        ]
+    ],
+    [
+        "<p>Která z následujících tvrzení jsou pravdivá?</p>",
+        [
+            "<p>Pokud nedefinujeme destruktor, překladač jej vytvoří automaticky</p>",
+            "<p>Destruktor může být v dané třídě pouze jeden</p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících deklarací objektů třídy Osoba jsou správně?</p>",
+        [
+            "<p>Osoba o;</p>",
+            "<p>Osoba o{};</p>",
+            "<p>Osoba* o = new Osoba;</p>",
+            "<p>Osoba* o = new Osoba();<br></p>",
+            "<p>Osoba* o = new Osoba{};<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažujem definici třídy DataA. <br></p>\n<pre>class dataA {<br>private:<br>    int a;<br><br>public:<br>    dataA() { a = 50; }<br>    dataA(int a) { this-&gt;a = 2 * a; }<br>    void SetA(int a) {<br>        if (a &gt; this-&gt;a) this-&gt;a = a;<br>    }<br>    int GetA() const { return a; }<br>    int Calc() const { return a * 3; }<br>};</pre><br=\"\"><p></p>\n<p>A příkazy programu</p><pre>  dataA o3(10);<br>  o3.SetA(15);<br>  int d = o3.GetA();</pre><br=\"\">Jaká je hodnota proměnné d po vykonání příkazů?<br><br></br=\"\"></br=\"\">",
+        [
+            "<p>d ... 20<br></p>"
+        ]
+    ],
+    [
+        "<p>Uvažujem definici třídy DataA a DataB. <br></p><p></p><pre>class dataA {<br>protected:<br>    int a;<br><br>public:<br>    dataA() { a = 50; }<br>    dataA(int a) { this-&gt;a = 2 * a; }<br>    void SetA(int a) {<br>        if (a &gt; this-&gt;a) this-&gt;a = a;<br>    }<br>    int GetA() const { return a; }<br>    int Calc() const { return a * 3; }<br>};<br><br>class DataB : public dataA {<br>public:<br>    void SetA(int a) {<br>        if (a &gt; 0) this-&gt;a = a;<br>    }<br>};</pre><p></p><p>A příkazy programu</p><pre>  DataB o3;<br>  o3.SetA(45);<br>  int d = o3.GetA();</pre>Jaká je hodnota proměnné d po vykonání příkazů?<br><br>",
+        [
+            "<p>45<br></p>"
+        ]
+    ],
+    [
+        "<p>Které z následujících operací označujeme jako tzv. speciální funkce (operace)?</p>",
+        [
+            "<p>Základní konstruktor</p>",
+            "<p>Kopírující konstruktor</p>",
+            "<p>Kopírující přiřazení</p>",
+            "<p>Přesunující konstruktor</p>",
+            "<p>Přesunující přiřazení</p>",
+            "<p>Destruktor</p>"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci destruktoru třídy T (pozor na malá a velká písmena, nepoužívejte nadbytečné mezery). Parametr neoznačujte jménem, neuvádějte středník na konci deklarace.</p>",
+        [
+            "~T()",
+            "T::~T()"
+        ]
+    ],
+    [
+        "<p>Co vypíše následující program na standardní výstup?</p><pre>struct A {<br>&nbsp; &nbsp; &nbsp;A() { std::cout &lt;&lt; \"A \";&nbsp; }<br>&nbsp; &nbsp; ~A() { std::cout &lt;&lt; \"~A \"; }<br>};<br>struct B : A {<br>&nbsp; &nbsp; &nbsp;B() { std::cout &lt;&lt; \"B \";&nbsp; }<br>&nbsp; &nbsp; ~B() { std::cout &lt;&lt; \"~B \"; }<br>};<br>struct C {<br>&nbsp; &nbsp; &nbsp;C() { std::cout &lt;&lt; \"C \";&nbsp; }<br>&nbsp; &nbsp; ~C() { std::cout &lt;&lt; \"~C \"; }<br>private:<br>&nbsp; &nbsp; B b;<br>};<br>int main() {<br>&nbsp; &nbsp; C c;<br>}</pre>\n<p></p>",
+        [
+            "A B C ~C ~B ~A",
+            "A B C ~C ~B ~A"
+        ]
+    ],
+    [
+        "<p>Jak se nazývá metoda, která se spouští při rušení objektu?<br></p>",
+        [
+            "destruktor",
+            "destructor"
+        ]
+    ],
+    [
+        "<p>Destruktorů může uživatel nadefinovat libovolný počet.<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Třída může mít libovolný počet destruktorů?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Je správně následující definice konstruktoru třídy Auto?</p>\n<pre><span style=\"font-size: 0.9375rem;\">class Auto{ <br>private:<br>&nbsp; int objem; string spz;<br>public:<br>&nbsp; string getSpz () { return spz; }<br>  Auto(string sp, int obj);<br>};</span></pre>\n<pre><span style=\"font-size: 0.9375rem;\">Auto::Auto(string sp, int obj): objem(obj) { spz = sp; }</span></pre>",
+        [
+            "<p>Ano je to správně.<br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se nazývá metoda, která se spouští při vytváření objektu?<br></p>",
+        [
+            "konstruktor",
+            "constructor"
+        ]
+    ],
+    [
+        "<p>Objekty jsou vytvářeny pomocí konstruktorů?</p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Máme definovanou třídu&nbsp;<span style=\"color: inherit; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: inherit;\">Sample.&nbsp;</span>Uvažujme následující kód:</p><p></p><pre><code class=\"hljs nginx\"><span class=\"hljs-attribute\">Sample</span> a;</code></pre><p></p><p>Objekt v tomto případě nevzniká, není zavolán konstruktor.</p><br><p></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Struktura musí mít právě jeden konstruktor?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Máme definovanou třídu&nbsp;<span style=\"color: inherit; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: inherit;\">Sample.&nbsp;</span>Uvažujme následující kód:</p>\n<pre><span style=\"font-size: 0.9375rem;\">Sample a{};</span></pre>\n<p>Při vytváření objektu je volán výchozí konstruktor.</p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Konstruktor může být pro každou třídu vždy právě jeden.</p><p><br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Struktura nemůže mít žádný konstruktor?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Třída může mít jen jeden konstruktor?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Modifikující operátor se vyznačuje tím, že mění svůj argument.<br></p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Která z následujících deklarací kopírujícího konstruktoru třídy Osoba je správná?</p>",
+        [
+            "<p>Osoba(const Osoba&amp;);</p>"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci kopírujícího konstruktoru třídy T, kterou zakážeme, aby jej generoval překladač. Pozor na malá a velká písmena, nepoužívejte nadbytečné mezery. Parametr neoznačujte jménem.</p>",
+        [
+            "T(const T&)=delete;",
+            "T(const T&)=delete"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci kopírujícího konstruktoru třídy T (pozor na malá a velká písmena, nepoužívejte nadbytečné mezery). Parametr neoznačujte jménem, neuvádějte středník na konci deklarace.</p>",
+        [
+            "T(const T&)",
+            "T::T(const T&)",
+            "T(T const&)"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci přesunujícího konstruktoru třídy T (pozor na malá a velká písmena, nepoužívejte nadbytečné mezery). Parametr neoznačujte jménem, neuvádějte středník na konci deklarace.</p>",
+        [
+            "T(T&&)",
+            "T::T(T&&)"
+        ]
+    ],
+    [
+        "<p>Napište deklaraci přesunujícího konstruktoru třídy T, kterou zakážeme, aby jej generoval překladač. Pozor na malá a velká písmena, nepoužívejte nadbytečné mezery. Parametr neoznačujte jménem.</p>",
+        [
+            "T(T&&)=delete;",
+            "T(T&&) = delete"
+        ]
+    ],
+    [
+        "<p>Napište volání metody, kterou zařídíte přesun objektu x do objektu stejného typu.</p><p><br></p>",
+        [
+            "std::move(x)",
+            "move(x)",
+            "std::move(x);"
+        ]
+    ],
+    [
+        "<p>Vyberte z následujících operací bitové operace.</p>",
+        [
+            "<p>&amp;</p>",
+            "<p>|</p>",
+            "<p>&lt;&lt;</p>",
+            "<p>~</p>"
+        ]
+    ],
+    [
+        "<p>Stav objektu je dán:</p>",
+        [
+            "<p>Stavem jeho atributů.</p>"
+        ]
+    ],
+    [
+        "<p></p>Jak se nazývá vztah,&nbsp; kdy jeden objekt tvoří celek, který jako části obsahuje jiné objekty<pre><br></pre>",
+        [
+            "agregace",
+            "Agregace"
+        ]
+    ],
+    [
+        "<p>Co bude výstupem následujícího programu, pokud jej spustíme uvedeným příkazem:</p>\n<pre><span style=\"font-size: 0.9375rem;\">#include &lt;iostream&gt;<br><br>int main(int argc, char *argv[]) {<br>   int i = 1;<br>   while (i &lt; argc)<br>&nbsp; &nbsp;   std::cout &lt;&lt; argv[i++] &lt;&lt; \" \";<br>   std::cout &lt;&lt; \"\\n\";<br>}<br></span></pre>\n<pre><span style=\"font-size: 0.9375rem;\">&gt;copypar 1 2 3</span></pre>",
+        [
+            "1 2 3"
+        ]
+    ],
+    [
+        "<p>Kompozice je speciální případ agregace.</p>",
+        [
+            "Pravda"
+        ]
+    ],
+    [
+        "<p>Uvažujme definici třídy DataA umístěnou v souboru DataA.h. <br></p><p>Jak vypadá fragment, kterým si zajistíme možnost použití třídy v hlavním programu, v souboru Main.cpp?<br></p>",
+        [
+            "<p>#include \"DataA.h\"<br></p>"
+        ]
+    ],
+    [
+        "<p>Jaký je rozdíl mezi \"třídou\" a \"objektem\"?<br></p>",
+        [
+            "<p>Třída popisuje vlastnosti objektů, objekt je pak reálný objekt dané třídy. <br></p>",
+            "<p>Objekt je instance třídy. <br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se v OOP nazývá objekt (třída), ze kterého děděním vznikají další objekty? <br></p>",
+        [
+            "<p>Rodič<br></p>",
+            "<p>Předchůdce<br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se jmenuje speciální metoda objektu, která se volá výhradně při rušení objektu? <br></p>",
+        [
+            "<p>Destruktor<br></p>"
+        ]
+    ],
+    [
+        "<p>Vyberte správné tvrzení:<br></p>",
+        [
+            "<p>Objekt má vždy alespoň jeden konstruktor. <br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se v OOP nazývá \"proměnná\", která je součástí objektu? <br></p>",
+        [
+            "<p>Atribut<br></p>",
+            "<p>Vlastnost<br></p>",
+            "<p>Datová položka<br></p>"
+        ]
+    ],
+    [
+        "<p>Jak se jmenuje speciální metoda objektu, která se volá výhradně při vytvoření objektu? <br></p>",
+        [
+            "<p>Konstruktor<br></p>"
+        ]
+    ],
+    [
+        "<p>Jaké typy konstruktorů existují? Vyberte smysluplné možnosti.<br></p>",
+        [
+            "<p>Bezparametrický konstruktor.<br></p>",
+            "<p>Parametrický konstruktor. <br></p>",
+            "<p>Explicitní konstruktor - bezparametrický a parametrický<br></p>",
+            "<p>Implicitní konstruktor - pouze bezparametrický<br></p>"
+        ]
+    ],
+    [
+        "<p>Vyberte, který příkaz by měl být správně doplněn místo ---</p>\n<pre><span style=\"font-size: 0.9375rem;\">int main () {<br>&nbsp;&nbsp;int *pp = new int[10];<br>&nbsp;&nbsp;for (int i = 0; i &lt; 10; i++)<br>     pp[i] = i;<br>&nbsp;&nbsp;&nbsp; ---<br>&nbsp;&nbsp;return 0;<br>}</span></pre>",
+        [
+            "<p>Je třeba doplnit delete [] pp;</p>"
+        ]
+    ],
+    [
+        "<p>Napište klíčové slovo, které můžete použít místo těla kopírujícího konstruktoru, pokud chcete, aby za Vás tento konstruktor vytvořil překladač?<br></p>",
+        [
+            "default",
+            "=default",
+            "= default",
+            "default;",
+            "=default;",
+            "= default;"
+        ]
+    ],
+    [
+        "<p>Běžné aritmetické konverze (usual arithmetic conversions) způsobí:<br></p>",
+        [
+            "<p>Jednodušší argument je převeden na typ složitějšího<br></p>"
+        ]
+    ],
+    [
+        "<p>Jakého typu je výsledek výrazu: 'x' + 'y' ?<br></p>",
+        [
+            "<p>int<br></p>"
+        ]
+    ],
+    [
+        "<p>Jak zjistíme velikost paměti, kterou zabírá proměnná x?<br></p>",
+        [
+            "<p>Pomocí standardní funkce sizeof(x)</p>"
+        ]
+    ],
+    [
+        "<p>Kolik bytů zabírá konstanta (literál):</p><p>\"gama\\ndelta\"</p><p><br></p>",
+        [
+            "11"
+        ]
+    ],
+    [
+        "<p>Kolik bytů zabírá konstanta (literál):</p><p>\"dnes+zitra\\n\"</p><p><br></p>",
+        [
+            "12"
+        ]
+    ],
+    [
+        "<p>Logické výrazy se povinně vyhodnocují zprava doleva?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Vyberte z možností pravdivé charakteristiky šablonových kontejnerů:&nbsp;</p>",
+        []
+    ],
+    [
+        "<p>\n\n</p><p style=\"margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;\nmargin-left:0cm\">Uvažte záznamy o zaměstnancích, které zahrnují položky jméno a\npříjmení. Chceme seřadit zaměstnance podle abecedy tak, že primární je řazení\ndle příjmení a v&nbsp;rámci stejných příjmení se řadí podle jména. Jakou\nvlastnost musí mít algoritmus řazení, který můžeme použít?<br></p><p style=\"margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;\nmargin-left:0cm\"><br></p>",
+        [
+            "<p>Musí být stabilní.<br></p>"
+        ]
+    ],
+    [
+        "<p>Které kontejnery jsou součástí standardní knihovny šablon?</p>",
+        [
+            "<p>vektor</p>",
+            "<p>multimap</p>"
+        ]
+    ],
+    [
+        "<p>Vyberte z možností pravdivé charakteristiky šablonových kontejnerů:<br></p>",
+        [
+            "<p>Kontejner <span><span><b>vector</b></span></span> poskytuje dynamické pole<br></p>",
+            "<p>Kontejner <b>set</b> realizuje asociativní kontejner typu množina<br></p>"
+        ]
+    ],
+    [
+        "<p>Zapište direktivu, která nadefinuje makro MAX se dvěma parametry, které vrátí větší z nich. Nezapisujte zbytečné mezery, uvažte, že parametrem může být cokoliv - třeba výraz s jinými operátory.<br></p><p><br></p>",
+        [
+            "#define MAX(X,Y) ((X)>(Y)?(X):(Y))"
+        ]
+    ],
+    [
+        "<p>Má lambda funkce definované jméno?</p>",
+        [
+            "Nepravda"
+        ]
+    ],
+    [
+        "<p>Funkce bsearch slouží pro řazení binárním půlením?<br></p>",
+        [
+            "Nepravda"
+        ]
+    ]
+]

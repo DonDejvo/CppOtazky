@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ otázky</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .question {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+        .answers li {
+            background-color: #e0e0e0;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ otázky</h1>
+    <div id="questions-container"></div>
+
+    <script>
+        async function fetchQuestions() {
+            try {
+                const response = await fetch('cpp_questions.json');
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
+                displayQuestions(data);
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        function displayQuestions(questions) {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                
+                const questionText = document.createElement('h3');
+                questionText.innerHTML = `Q${index + 1}: ${question[0]}`;
+                
+                const answersList = document.createElement('ul');
+                answersList.classList.add('answers');
+
+                question[1].forEach(answer => {
+                    const answerItem = document.createElement('li');
+                    answerItem.innerHTML = answer;
+                    answersList.appendChild(answerItem);
+                });
+
+                questionDiv.appendChild(questionText);
+                questionDiv.appendChild(answersList);
+                container.appendChild(questionDiv);
+            });
+        }
+
+        fetchQuestions();
+    </script>
+</body>
+</html>
